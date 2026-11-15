@@ -1,0 +1,21 @@
+<!-- 反馈通过表单生成草稿，由访客复制或使用邮件发送；本站没有留言服务器。 -->
+<section class="write-box feedback" aria-labelledby="feedback-heading">
+  <h2 id="feedback-heading">留言与建议</h2>
+  <p class="hint">发现页面问题或想交流项目，可以先填写反馈。内容仅在本页生成草稿，不会自动发送；请勿填写敏感信息。</p>
+  <form id="feedback-form">
+    <label for="feedback-name">称呼（选填）</label>
+    <input id="feedback-name" name="visitor" maxlength="30" autocomplete="nickname" placeholder="怎么称呼你？">
+    <label for="feedback-content">建议或问题（必填）</label>
+    <textarea id="feedback-content" name="message" required maxlength="600" rows="4" placeholder="例如：哪个页面出现了问题，或希望补充哪方面的内容"></textarea>
+    <div class="form-actions">
+      <button type="submit" class="button" disabled>生成反馈草稿</button>
+      <button type="button" id="feedback-copy" class="button secondary" disabled>复制反馈</button>
+      <a id="feedback-email" class="button secondary" href="mailto:166528786@qq.com?subject=个人主页反馈">用邮件发送</a>
+    </div>
+    <div id="feedback-preview" hidden>
+      <label for="feedback-draft">反馈草稿</label>
+      <textarea id="feedback-draft" readonly rows="5"></textarea>
+    </div>
+    <p id="feedback-status" class="status" role="status" aria-live="polite"></p>
+  </form>
+</section>

@@ -230,3 +230,16 @@ main .view > .filters { max-width: 900px; margin: 0 auto; }
   .project, .entry { break-inside: avoid; }
   .footer { margin-top: 20px; }
 }
+
+/* 项目证据使用原始截图与实际测试记录，不伪装成现场照片。 */
+.evidence { margin: 22px 0; }
+.evidence img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 9px; background: var(--panel); }
+.evidence figcaption { margin-top: 9px; color: var(--muted); font-size: 12px; }
+.feedback h2 { font-size: 18px; }
+.feedback label { margin-top: 14px; }
+.feedback #feedback-preview { margin-top: 18px; }
+.button:disabled { opacity: .55; cursor: default; }
+
+.evidence-table { width: 100%; border-collapse: collapse; margin-top: 22px; font-size: 13px; }
+.evidence-table caption { text-align: left; font-weight: 500; margin-bottom: 9px; }
+.evidence-table th, .evidence-table td { border-bottom: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }

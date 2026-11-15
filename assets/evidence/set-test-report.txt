@@ -1,0 +1,32 @@
+集合测试记录
+运行日期：2026-11-15
+来源：8f4c591c7d0854a7fd30ba824e769cb204754301
+gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r2) 16.2.0
+编译参数：-Wall -Wextra -Werror -std=c11
+
+=== array_set ===
+A = {"apple", "banana", "cherry"}
+B = {"banana", "cherry", "orange"}
+Union = {"apple", "banana", "cherry", "orange"}
+Intersection = {"banana", "cherry"}
+Difference A-B = {"apple"}
+Subset tests passed.
+Empty set and result reuse tests passed.
+Removal tests passed.
+Clear and reuse tests passed.
+Capacity and string length tests passed.
+All tests passed.
+
+
+=== linked_set ===
+A = {"apple", "banana", "cherry"}
+B = {"banana", "cherry", "orange"}
+Union = {"apple", "banana", "cherry", "orange"}
+Intersection = {"banana", "cherry"}
+Difference A-B = {"apple"}
+Subset tests passed.
+Empty set tests passed.
+Result reuse tests passed.
+Removal tests passed.
+Clear, reuse and empty string tests passed.
+All tests passed.

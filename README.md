@@ -61,3 +61,11 @@ python tools/build.py
 ## 找到我
 
 [GitHub · Jingzhe-chen714](https://github.com/Jingzhe-chen714)
+
+## 项目证据与反馈
+
+- `assets/evidence/set-test-report.txt`：2026-11-15用GCC 16.2.0重新运行当前本地副本的数组与链表集合测试，记录源码提交号与完整输出。
+- `assets/evidence/set-test.svg`：依据上述实测输出绘制的结果图，不是软件运行截图。
+- `assets/evidence/ocr-workbench.png`：来自OCR团队仓库`html/assets/主工作台.png`的原始工作台初始界面截图。
+- 学习记录页的反馈表单可生成草稿并复制，或打开邮件撰写窗口；没有后台留言服务，不会自动发送。模板与逻辑分别位于`templates/feedback.html`和`templates/feedback.js`，生成后进入独立HTML与`assets/app.js`。
+- 项目时间为本人确认的2026年7月、9月至10月，早于本次更新日期2026-11-15。
