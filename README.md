@@ -54,6 +54,10 @@ python tools/build.py
 
 后续会继续补充串口联调记录、集合测试和新的项目实践，也计划探索大模型应用开发。
 
+## 发布方式
+
+网站通过 GitHub Pages 发布，发布来源为 `main` 分支的仓库根目录。根目录保留 `.nojekyll`，页面、样式和脚本作为静态文件提供。推送后等待 Pages 构建完成即可更新线上内容。
+
 ## 找到我
 
 [GitHub · Jingzhe-chen714](https://github.com/Jingzhe-chen714)
