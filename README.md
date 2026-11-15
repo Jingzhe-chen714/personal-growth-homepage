@@ -69,3 +69,10 @@ python tools/build.py
 - `assets/evidence/ocr-workbench.png`：来自OCR团队仓库`html/assets/主工作台.png`的原始工作台初始界面截图。
 - 学习记录页的反馈表单可生成草稿并复制，或打开邮件撰写窗口；没有后台留言服务，不会自动发送。模板与逻辑分别位于`templates/feedback.html`和`templates/feedback.js`，生成后进入独立HTML与`assets/app.js`。
 - 项目时间为本人确认的2026年7月、9月至10月，早于本次更新日期2026-11-15。
+
+## 公开说明与渐进增强
+
+- [FPGA公开项目说明](docs/fpga-project.md)与[联调记录示意](assets/evidence/fpga-field-notes.svg)公开可读；原始FPGA工程仍由原私有仓库维护。示意图不冒充现场照片。
+- 默认提交按钮可用。启用脚本时，表单在本页保存或生成草稿；无脚本时，表单使用原生`mailto`、`POST`、`text/plain`交给已配置的邮件客户端，由使用者确认发送。没有后台留言服务。其基础行为参见[HTML表单提交规范](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html)。
+- 搜索、筛选、复制与导出属于脚本增强功能；无脚本时隐藏增强控件，仍可浏览三页全部内容、使用页面查找和邮件表单。
+- [内容更新约定](CONTRIBUTING.md)记录时间、状态、证据标注、模板维护和发布检查要求。

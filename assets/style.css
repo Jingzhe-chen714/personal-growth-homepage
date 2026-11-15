@@ -238,8 +238,12 @@ main .view > .filters { max-width: 900px; margin: 0 auto; }
 .feedback h2 { font-size: 18px; }
 .feedback label { margin-top: 14px; }
 .feedback #feedback-preview { margin-top: 18px; }
-.button:disabled { opacity: .55; cursor: default; }
+
 
 .evidence-table { width: 100%; border-collapse: collapse; margin-top: 22px; font-size: 13px; }
 .evidence-table caption { text-align: left; font-weight: 500; margin-bottom: 9px; }
 .evidence-table th, .evidence-table td { border-bottom: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }
+
+/* 无脚本时隐藏增强控件，原生表单与页面链接仍然可用。 */
+.js-only { display: none !important; }
+.js-ready .js-only { display: flex !important; }
