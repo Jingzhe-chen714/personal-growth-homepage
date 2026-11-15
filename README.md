@@ -2,6 +2,10 @@
 
 个人项目、学习记录和实践笔记。
 
+在线访问：https://Jingzhe-chen714.github.io/personal-growth-homepage/
+
+联系邮箱：166528786@qq.com
+
 软件工程（AI大模型试验班）2501 · 陈小雨。
 
 目前主要做 C 语言与数据结构练习，也参与 FPGA 视觉项目的串口界面开发。
@@ -32,9 +36,9 @@ python -m http.server 8765 --bind 127.0.0.1
 
 ## 最近的实践
 
-- [Ti60 实时视觉与串口控制](https://github.com/Jingzhe-chen714/fpga)：我负责串口界面，正在复盘设备连接、显示同步与流畅度问题。仓库目前为私有。
-- [数据结构练习](https://gitee.com/chen-xiaoyu33/data-structure-course-design)：我负责集合与测试，比较数组和链表实现，并检查重复元素、空集合、容量和删除边界。
-- [本地 OCR 图片与文档识别工具](https://github.com/weijiayue19/project6)：参与的团队项目，使用 Python、PaddleOCR、Tkinter 和 SQLite。
+- [Ti60 实时视觉与串口控制](https://github.com/Jingzhe-chen714/fpga)：我负责串口界面，2026年9—10月完成，加入分配器和采集卡解决同步显示问题。仓库目前为私有。
+- [数据结构练习](https://gitee.com/chen-xiaoyu33/data-structure-course-design)：2026年9月开始，目前进行中；我负责集合与测试，比较数组和链表实现，并检查重复元素、空集合、容量和删除边界。
+- [本地 OCR 图片与文档识别工具](https://github.com/weijiayue19/project6)：2026年7月完成的团队项目，使用 Python、PaddleOCR、Tkinter 和 SQLite。
 
 ## 记录与更新
 
