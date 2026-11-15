@@ -2,4 +2,3 @@ __pycache__/
 *.pyc
 *.zip
 .DS_Store
-tools/github_repository.py
