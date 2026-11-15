@@ -81,6 +81,7 @@ main.wrap { min-height: 70vh; }
 .project-type { font-size: 11px; color: #66715f; white-space: nowrap; }
 .project-meta { display: flex; flex-wrap: wrap; gap: 7px 20px; font-size: 11px; color: #66715f; }
 .project-meta span { display: flex; align-items: center; gap: 6px; }
+.repo-link { margin-left: auto; font-size: 12px; text-decoration: underline; text-decoration-color: #a6b39b; white-space: nowrap; }
 .language-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #789483; }
 .language-dot.c { background: #999292; }
 .language-dot.python { background: #b49b70; }
@@ -189,6 +190,7 @@ main .view > .filters { max-width: 900px; margin: 0 auto; }
   .home-project { padding: 19px 0; }
   .home-project h3 { font-size: 14px; }
   .home-project p { margin: 9px 0; line-height: 1.95; }
+  .repo-link { margin-left: 0; }
   .note-row { gap: 7px 10px; padding: 17px 0; }
   .note-row h3 { font-size: 13px; }
   .note-row time { font-size: 10px; }
