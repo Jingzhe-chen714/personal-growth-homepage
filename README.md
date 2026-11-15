@@ -44,7 +44,7 @@ python -m http.server 8765 --bind 127.0.0.1
 
 学习手记页支持新增记录，并将内容保存在当前浏览器中；可以导出 JSON 备份。这些记录不会自动同步到 GitHub，换设备或清除浏览器数据前请先导出。
 
-页面内容与样式在 `templates/` 中维护，学习记录和项目详情位于 `tools/build.py`。修改后运行：
+首页、项目详情、样式与反馈表单在 `templates/` 中维护；学习记录与共享页面框架位于 `tools/build.py`。修改后运行：
 
 ```sh
 python tools/build.py
@@ -67,12 +67,15 @@ python tools/build.py
 - `assets/evidence/set-test-report.txt`：2026-11-15用GCC 16.2.0重新运行当前本地副本的数组与链表集合测试，记录源码提交号与完整输出。
 - `assets/evidence/set-test.svg`：依据上述实测输出绘制的结果图，不是软件运行截图。
 - `assets/evidence/ocr-workbench.png`：来自OCR团队仓库`html/assets/主工作台.png`的原始工作台初始界面截图。
+- `assets/evidence/fpga-field-photo.jpg`：本人提供的联调现场照片，仅按网页加载需要缩小尺寸并转换为 JPEG；保留原设备和屏幕内容。
+- `assets/evidence/fpga-poster.png`：本人提供的团队项目海报，海报中的算法与动态效果为视觉示意，非实测截图。
+- `assets/evidence/set-test-preview.svg`：首页使用的实测输出节选排版图，非终端截图；完整输出仍以测试记录为准。
 - 学习记录页的反馈表单可生成草稿并复制，或打开邮件撰写窗口；没有后台留言服务，不会自动发送。模板与逻辑分别位于`templates/feedback.html`和`templates/feedback.js`，生成后进入独立HTML与`assets/app.js`。
 - 项目时间为本人确认的2026年7月、9月至10月，早于本次更新日期2026-11-15。
 
 ## 公开说明与渐进增强
 
-- [FPGA公开项目说明](docs/fpga-project.md)与[联调记录示意](assets/evidence/fpga-field-notes.svg)公开可读；原始FPGA工程仍由原私有仓库维护。示意图不冒充现场照片。
+- [FPGA公开项目说明](docs/fpga-project.md)、[联调现场照片](assets/evidence/fpga-field-photo.jpg)与[项目海报](assets/evidence/fpga-poster.png)公开可读；原始FPGA工程仍由原私有仓库维护。旧版[联调记录示意](assets/evidence/fpga-field-notes.svg)保留为补充文字图，不冒充现场照片。
 - 默认提交按钮可用。启用脚本时，表单在本页保存或生成草稿；无脚本时，表单使用原生`mailto`、`POST`、`text/plain`交给已配置的邮件客户端，由使用者确认发送。没有后台留言服务。其基础行为参见[HTML表单提交规范](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html)。
 - 搜索、筛选、复制与导出属于脚本增强功能；无脚本时隐藏增强控件，仍可浏览三页全部内容、使用页面查找和邮件表单。
 - [内容更新约定](CONTRIBUTING.md)记录时间、状态、证据标注、模板维护和发布检查要求。

@@ -12,10 +12,12 @@
 
 ## 修改与检查
 
-1. 首页内容修改 `templates/home.html`；学习和项目正文修改 `tools/build.py`。
+1. 首页内容修改 `templates/home.html`，项目正文修改 `templates/projects.html`，学习记录修改 `tools/build.py`。
 2. 样式修改 `templates/style.css`；反馈表单及增强逻辑分别修改 `templates/feedback.html`、`templates/feedback.js`。
 3. 运行 `python tools/build.py`，同步生成独立页面和共享资源。
 4. 检查导航、公开证据链接、桌面与手机排版、必填校验、正常脚本模式与原生邮件表单退路。
 5. 更新行为或样式时修改资源版本号；提交后等待 GitHub Pages 构建成功。
+
+首页项目统一使用 `.project-card`，图片保持相同比例，标题、日期、简介与链接顺序一致。新增项目时补充对应详情锚点、真实图片说明与仓库链接；不要用生成效果图替代现场照片或软件截图。
 
 网页新增的本地记录不会自动进入 Git 仓库。公开更新时把整理后的内容写回模板，避免覆盖维护中的正式页面。

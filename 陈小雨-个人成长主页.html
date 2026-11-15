@@ -2,14 +2,14 @@
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="陈小雨的个人主页：项目、学习记录与编程实践。"><meta name="color-scheme" content="light"><title>首页 · 陈小雨</title><style>/* Palette and type */
 :root {
   color-scheme: light;
-  --canvas: #eae7e0;
-  --panel: #f7f5f0;
+  --canvas: #eeebe5;
+  --panel: #f5f2ec;
   --panel-alt: #eeece5;
   --sidebar: #e4e9e0;
-  --text: #354039;
-  --muted: #5f6b59;
-  --line: #dcded4;
-  --link: #406551;
+  --text: #30352f;
+  --muted: #687064;
+  --line: #cdcec5;
+  --link: #52623e;
   --accent-soft: #d9e3d7;
   --focus: #64836c;
   --shadow: 0 3px 16px rgba(51, 60, 48, .035);
@@ -41,57 +41,62 @@ h1, h2, h3 { line-height: 1.5; font-weight: 600; }
 .skip:focus { top: 8px; }
 
 /* Navigation */
-.site-header { border-bottom: 1px solid rgba(92, 105, 86, .12); }
-.header-inner { display: flex; align-items: center; gap: 28px; min-height: 82px; }
-.brand { margin-right: auto; color: var(--text); font-size: 16px; font-weight: 600; white-space: nowrap; }
+.site-header .header-inner { border-bottom: 1px solid var(--line); }
+.header-inner { display: flex; align-items: center; gap: 28px; min-height: 64px; }
+.brand { margin-right: auto; color: var(--text); font: 600 19px/1.5 "Songti SC", "SimSun", serif; white-space: nowrap; }
 .brand:hover { text-decoration: none; }
-.nav { display: flex; gap: 6px; align-items: center; }
-.nav a { color: var(--muted); padding: 7px 15px; border-radius: 8px; font-size: 13px; }
-.nav a:hover { background: rgba(247, 245, 240, .65); color: var(--text); text-decoration: none; }
-.nav a[aria-current=page] { background: var(--accent-soft); color: #35523e; }
-.github-link { font-size: 12px; color: var(--muted); padding-left: 24px; border-left: 1px solid #cfd4c9; }
+.nav { display: flex; gap: 24px; align-items: center; }
+.nav a { color: var(--text); padding: 17px 3px 12px; border-bottom: 3px solid transparent; font-size: 14px; }
+.nav a:hover { color: var(--link); text-decoration: none; border-bottom-color: #aeb69f; }
+.nav a[aria-current=page] { border-bottom-color: var(--link); }
+.github-link { font-size: 13px; color: var(--text); }
 main.wrap { min-height: 70vh; }
 
-/* Homepage */
-.home-layout { display: grid; grid-template-columns: 262px minmax(0, 1fr); gap: 26px; padding: 32px 0 0; align-items: start; }
-.profile { background: var(--sidebar); border: 1px solid #d6ddd0; border-radius: 15px; padding: 28px 24px 22px; box-shadow: var(--shadow); }
-.profile h1 { font-size: 27px; letter-spacing: .4px; margin: 0 0 7px; color: #2f4436; }
-.profile .profile-class { font-size: 12px; color: #5f6b59; margin-bottom: 22px; }
-.profile p { color: #515f52; margin-bottom: 13px; font-size: 13px; }
-.profile .profile-links { display: flex; gap: 10px; margin: 21px 0 27px; }
-.profile-links a { display: inline-block; font-size: 12px; padding: 4px 12px; background: #edf0e8; border: 1px solid #cdd7c7; border-radius: 7px; color: #476147; }
-.profile-links a:hover { background: #f4f5ef; text-decoration: none; }
-.profile h2 { font-size: 12px; color: #5e6d57; margin: 23px 0 14px; padding-top: 20px; border-top: 1px solid #ced7c7; font-weight: 500; }
-.practice-list { padding: 0; margin: 0; list-style: none; }
-.practice-list li { margin-bottom: 19px; }
-.practice-list li:last-child { margin-bottom: 0; }
-.practice-list b { display: block; font-size: 13px; font-weight: 500; }
-.practice-list span { display: block; font-size: 12px; color: #5f6b59; margin-top: 4px; }
-.profile .interest { font-size: 12px; color: #5f6b59; margin-bottom: 3px; }
-.home-content { min-width: 0; }
-.home-section { background: var(--panel); border: 1px solid var(--line); border-radius: 15px; padding: 24px 27px 7px; margin-bottom: 22px; box-shadow: var(--shadow); }
-.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 0 0 16px; border-bottom: 1px solid var(--line); }
-.section-head h2 { font-size: 18px; margin: 0; color: #354537; }
-.section-head a { color: var(--muted); font-size: 12px; }
-.home-project { padding: 21px 0 22px; border-bottom: 1px solid #e1e3d9; }
-.home-project:last-child { border-bottom: 0; }
-.project-line { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
-.home-project h3 { margin: 0; font-size: 16px; font-weight: 600; }
-.home-project h3 a { color: #3d5845; }
-.home-project p { font-size: 13px; color: #5b655b; margin: 10px 0 11px; line-height: 1.95; }
-.project-type { font-size: 11px; color: #66715f; white-space: nowrap; }
-.project-meta { display: flex; flex-wrap: wrap; gap: 7px 20px; font-size: 11px; color: #66715f; }
-.project-meta span { display: flex; align-items: center; gap: 6px; }
-.repo-link { margin-left: auto; font-size: 12px; text-decoration: underline; text-decoration-color: #a6b39b; white-space: nowrap; }
-.language-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #789483; }
-.language-dot.c { background: #999292; }
-.language-dot.python { background: #b49b70; }
-.note-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 7px 20px; padding: 18px 0; border-bottom: 1px solid #e1e3d9; }
-.note-row:last-child { border-bottom: 0; }
-.note-row h3 { font-size: 14px; font-weight: 500; margin: 0; }
-.note-row time { padding-top: 2px; color: #66715f; font: 11px/2 Consolas, monospace; }
-.note-row p { grid-column: 1/-1; font-size: 12px; color: var(--muted); margin: 0; }
-.footer { display: flex; justify-content: space-between; gap: 20px; font-size: 11px; color: #5f6b59; padding: 20px 2px 27px; margin-top: 12px; }
+/* Homepage: equal project columns with matching image and text tracks. */
+.intro { display: grid; grid-template-columns: minmax(0, 1fr) 270px; align-items: center; gap: 55px; padding: 29px 4px 27px; border-bottom: 1px solid var(--line); }
+.intro h1 { font: 600 34px/1.35 "Songti SC", "SimSun", serif; margin: 0 0 6px; }
+.intro-class { font-size: 15px; margin-bottom: 9px; }
+.intro-description { font-size: 13px; line-height: 1.9; margin-bottom: 10px; }
+.intro-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; font-size: 13px; }
+.intro-links a, .card-link, .section-head > a { text-decoration: underline; text-decoration-color: #9fa68f; }
+.intro-learning { padding: 13px 0 13px 35px; border-left: 1px solid var(--line); }
+.intro-learning h2 { font-size: 16px; font-weight: 500; color: var(--link); margin-bottom: 8px; }
+.intro-learning p { font-size: 14px; margin-bottom: 0; }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 13px 2px 10px; border-bottom: 1px solid var(--line); }
+.section-head h2 { font: 600 25px/1.5 "Songti SC", "SimSun", serif; margin: 0; }
+.section-head > a { font-size: 12px; white-space: nowrap; }
+.project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; padding: 18px 4px 22px; }
+.project-card { display: flex; flex-direction: column; min-width: 0; }
+.project-cover { display: block; overflow: hidden; aspect-ratio: 8 / 5; background: #f6f4ef; border: 1px solid #bdbfb5; border-radius: 7px; }
+.project-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.project-cover img.contain { object-fit: contain; }
+.project-card h3 { min-height: 54px; margin: 11px 0 3px; font: 600 20px/1.35 "Songti SC", "SimSun", serif; }
+.project-card h3 a { color: var(--text); }
+.project-card h3 span { display: block; }
+.card-date { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+.card-description { min-height: 50px; font-size: 13px; line-height: 1.8; margin-bottom: 7px; }
+.card-link { align-self: flex-start; margin-top: auto; font-size: 13px; }
+.recent-notes { border-top: 1px solid var(--line); }
+.note-row { display: grid; grid-template-columns: 78px 220px minmax(0, 1fr) 20px; align-items: baseline; gap: 18px; padding: 11px 4px; border-bottom: 1px solid var(--line); }
+.note-row time { color: var(--link); font: 13px/1.8 Consolas, monospace; }
+.note-row h3 { font-size: 13px; font-weight: 600; margin: 0; }
+.note-row h3 a { color: var(--text); }
+.note-row p { font-size: 12px; color: var(--muted); margin: 0; }
+.note-arrow { font-size: 19px; line-height: 1; }
+.next-step { display: flex; align-items: baseline; gap: 22px; padding: 14px 4px; }
+.next-step h2 { font-size: 15px; font-weight: 500; color: var(--link); margin-bottom: 0; white-space: nowrap; }
+.next-step p { font-size: 12px; margin: 0; }
+.site-notes { font-size: 12px; padding: 0 4px 12px; }
+.site-notes > summary { width: fit-content; color: var(--muted); cursor: pointer; }
+.site-notes[open] { border-top: 1px solid var(--line); padding-top: 14px; }
+.site-notes h2 { font-size: 16px; margin: 20px 0 10px; }
+.site-notes .practice-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.practice-list { padding: 0; margin: 0 0 20px; list-style: none; }
+.practice-list b, .practice-list span { display: block; }
+.practice-list b { font-weight: 500; }
+.practice-list span { color: var(--muted); margin: 4px 0; }
+.footer { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); padding: 18px 2px 25px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 14px; }
 .footer a { color: var(--muted); }
 
 /* Reading pages */
@@ -163,38 +168,40 @@ main .view > .filters { max-width: 900px; margin: 0 auto; }
 /* Smaller screens */
 @media (max-width: 900px) {
   .wrap { width: calc(100% - 40px); }
-  .home-layout { grid-template-columns: 222px minmax(0, 1fr); gap: 20px; }
-  .profile { padding: 24px 20px; }
-  .home-section { padding: 22px 23px 6px; }
-  .project-type { display: none; }
-  .project-meta { gap: 5px 13px; }
-  .home-project h3 { font-size: 15px; }
+  .intro { grid-template-columns: minmax(0, 1fr) 220px; gap: 26px; }
+  .intro-learning { padding-left: 22px; }
+  .project-grid { gap: 22px; }
+  .project-card h3 { font-size: 18px; min-height: 49px; }
+  .card-description { min-height: 70px; }
+  .note-row { grid-template-columns: 70px 180px minmax(0, 1fr) 18px; gap: 12px; }
 }
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .wrap { width: calc(100% - 28px); }
-  .header-inner { min-height: 68px; gap: 12px; }
-  .brand { font-size: 15px; }
-  .nav { gap: 2px; }
-  .nav a { font-size: 12px; padding: 7px 11px; }
+  .header-inner { min-height: 58px; gap: 12px; }
+  .brand { font-size: 17px; }
+  .nav { gap: 16px; }
+  .nav a { font-size: 12px; padding: 17px 1px 11px; }
   .github-link { display: none; }
-  .home-layout { grid-template-columns: 1fr; padding-top: 19px; gap: 18px; }
-  .profile { padding: 22px 22px 19px; border-radius: 13px; }
-  .profile h1 { font-size: 25px; }
-  .profile .profile-class { margin-bottom: 15px; }
-  .profile p { font-size: 13px; }
-  .profile .profile-links { margin: 17px 0 0; }
-  .profile h2, .profile .practice-list, .profile .interest { display: none; }
-  .home-section { padding: 21px 21px 5px; border-radius: 13px; margin-bottom: 18px; }
-  .section-head { padding-bottom: 14px; }
-  .section-head h2 { font-size: 17px; }
+  .intro { grid-template-columns: 1fr; gap: 18px; padding: 24px 2px; }
+  .intro h1 { font-size: 30px; }
+  .intro-class { font-size: 13px; }
+  .intro-description br { display: none; }
+  .intro-learning { border-left: 0; padding: 0; }
+  .intro-learning h2, .intro-learning p { display: inline; font-size: 12px; }
+  .intro-learning h2 { margin-right: 12px; }
+  .section-head h2 { font-size: 22px; }
   .section-head a { font-size: 11px; }
-  .home-project { padding: 19px 0; }
-  .home-project h3 { font-size: 14px; }
-  .home-project p { margin: 9px 0; line-height: 1.95; }
-  .repo-link { margin-left: 0; }
-  .note-row { gap: 7px 10px; padding: 17px 0; }
+  .project-grid { grid-template-columns: 1fr; gap: 25px; padding: 18px 2px 25px; }
+  .project-card h3 { font-size: 20px; min-height: 54px; }
+  .card-description { min-height: 0; }
+  .card-link { margin-top: 2px; }
+  .note-row { grid-template-columns: 64px minmax(0, 1fr) 18px; gap: 2px 10px; padding: 12px 2px; }
   .note-row h3 { font-size: 13px; }
-  .note-row time { font-size: 10px; }
+  .note-row time { font-size: 11px; }
+  .note-row p { grid-column: 2; font-size: 11px; }
+  .note-arrow { grid-column: 3; grid-row: 1 / 3; align-self: center; }
+  .next-step { gap: 18px; }
+  .site-notes .practice-list { grid-template-columns: 1fr; gap: 16px; }
   .page-title { padding: 25px 3px 20px; }
   .page-title h1 { font-size: 23px; }
   .page-title p { font-size: 12px; }
@@ -217,8 +224,7 @@ main .view > .filters { max-width: 900px; margin: 0 auto; }
   .project pre { padding: 13px; font-size: 11px; }
   .project-links { gap: 14px; }
   .section { padding: 7px 3px 22px; }
-  .footer { margin-top: 0; padding: 18px 2px 23px; font-size: 10px; }
-  .footer span:last-child { white-space: nowrap; }
+  .footer { flex-wrap: wrap; gap: 8px 20px; padding: 16px 2px 23px; font-size: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
@@ -226,8 +232,7 @@ main .view > .filters { max-width: 900px; margin: 0 auto; }
   .site-header, .filters, .searchbar, .write-box, .skip { display: none; }
   .wrap { width: 100%; }
   .view { display: block !important; }
-  .home-layout { gap: 25px; padding-top: 0; }
-  .profile, .home-section, .journal-layout, .project { box-shadow: none; background: #fff; border-color: #ddd; }
+  .journal-layout, .project { box-shadow: none; background: #fff; border-color: #ddd; }
   .project, .entry { break-inside: avoid; }
   .footer { margin-top: 20px; }
 }
@@ -236,6 +241,7 @@ main .view > .filters { max-width: 900px; margin: 0 auto; }
 .evidence { margin: 22px 0; }
 .evidence img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 9px; background: var(--panel); }
 .evidence figcaption { margin-top: 9px; color: var(--muted); font-size: 12px; }
+.poster-evidence { max-width: 320px; }
 .feedback h2 { font-size: 18px; }
 .feedback label { margin-top: 14px; }
 .feedback #feedback-preview { margin-top: 18px; }
@@ -249,64 +255,72 @@ main .view > .filters { max-width: 900px; margin: 0 auto; }
 .js-only { display: none !important; }
 .js-ready .js-only { display: flex !important; }
 </style></head>
-<body data-single="true"><a class="skip" href="#main">跳到主要内容</a><header class="site-header"><div class="wrap header-inner"><a class="brand" data-page="home" href="index.html">陈小雨</a><nav class="nav" aria-label="主导航"><a data-page="home" href="index.html" aria-current="page">首页</a><a data-page="journal" href="learning.html">学习记录</a><a data-page="projects" href="projects.html">项目</a></nav><a class="github-link" href="https://github.com/Jingzhe-chen714" target="_blank" rel="noopener noreferrer">GitHub</a></div></header><main class="wrap" id="main"><noscript><p class="noscript">JavaScript 未启用：仍可访问三个页面、阅读全部内容并使用邮件表单。搜索可用浏览器的页面查找功能；本地保存、导出和筛选需要启用脚本。</p></noscript><div class="view" data-view="home"><div class="home-layout">
-  <aside class="profile" aria-label="关于我">
+<body data-single="true"><a class="skip" href="#main">跳到主要内容</a><header class="site-header"><div class="wrap header-inner"><a class="brand" data-page="home" href="index.html">陈小雨</a><nav class="nav" aria-label="主导航"><a data-page="home" href="index.html" aria-current="page">首页</a><a data-page="journal" href="learning.html">学习记录</a><a data-page="projects" href="projects.html">项目</a></nav><a class="github-link" href="https://github.com/Jingzhe-chen714" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></header><main class="wrap" id="main"><noscript><p class="noscript">JavaScript 未启用：仍可访问三个页面、阅读全部内容并使用邮件表单。搜索可用浏览器的页面查找功能；本地保存、导出和筛选需要启用脚本。</p></noscript><div class="view" data-view="home"><section class="intro" aria-label="关于我">
+  <div class="intro-copy">
     <h1>陈小雨</h1>
-    <p class="profile-class">软件工程（AI大模型试验班）2501</p>
-    <p>目前在做 C 语言与数据结构练习，也参与了 FPGA 视觉项目的串口界面开发。</p>
-    <p>这里放一些项目、学习记录，以及还没解决的问题。</p>
-    <div id="contact"><b>联系方式</b><p><a href="mailto:166528786@qq.com">166528786@qq.com</a></p></div>
-    <div class="profile-links">
-      <a href="https://github.com/Jingzhe-chen714" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://gitee.com/chen-xiaoyu33" target="_blank" rel="noopener noreferrer">Gitee</a>
+    <p class="intro-class">软件工程（AI大模型试验班）2501</p>
+    <p class="intro-description">在做 C 语言与数据结构练习，也参与 FPGA 项目的串口界面开发。<br>这里放一些项目、学习记录，以及还没解决的问题。</p>
+    <div class="intro-links" id="contact" aria-label="联系方式">
+      <a href="mailto:166528786@qq.com">166528786@qq.com</a>
+      <a href="https://github.com/Jingzhe-chen714" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="https://gitee.com/chen-xiaoyu33" target="_blank" rel="noopener noreferrer">Gitee ↗</a>
     </div>
-
-    <h2>实践范围</h2>
-    <ul class="practice-list" id="skills">
-      <li><b>C 语言 / 数据结构</b><span>数组与链表集合、内存管理、边界测试。</span></li>
-      <li><b>串口界面</b><span>电脑端控制界面与板端设备联调。</span></li>
-      <li><b>Git</b><span>版本管理、项目文档与代码整理。</span></li>
-    </ul>
-    <h2>接下来想学</h2>
-    <p class="interest">继续完善基础编程和测试，尝试大模型应用开发与 RAG。</p>
-  </aside>
-
-  <div class="home-content">
-<section class="home-section" aria-label="技能展示">    <div class="section-head"><h2>技能与作品证据</h2></div>
-    <ul class="practice-list">
-      <li><b>C语言：集合与测试</b><span>实现数组和链表集合，测试重复添加、空集合、容量和删除边界。</span><a href="https://gitee.com/chen-xiaoyu33/data-structure-course-design/tree/master/task1_set" target="_blank" rel="noopener noreferrer">集合源码与测试</a> · <a href="assets/evidence/set-test.svg">测试结果图</a> · <a href="assets/evidence/set-test-report.txt">实测记录</a></li>
-      <li><b>串口界面开发</b><span>负责电脑端控制界面，通过分配器和采集卡补充配置，解决同步显示问题。</span><a href="projects.html#fpga-public">公开项目说明与联调图</a> · <a href="projects.html#fpga-public">联调前后观察</a></li>
-      <li><b>Git版本与文档管理</b><span>维护主页页面、运行说明与版本记录。</span><a href="https://github.com/Jingzhe-chen714/personal-growth-homepage/commits/main" target="_blank" rel="noopener noreferrer">公开版本与维护记录</a></li>
-    </ul>
-</section>
-    <section class="home-section" aria-labelledby="home-projects">
-      <div class="section-head"><h2 id="home-projects">项目</h2><a data-page="projects" href="projects.html">详细介绍</a></div>
-      <article class="home-project">
-        <div class="project-line"><h3><a data-page="projects" href="projects.html">Ti60 实时视觉与串口控制</a></h3><span class="project-type">团队项目</span></div>
-        <p>负责电脑端串口界面。加入分配器和采集卡，补充硬件配置，解决同步显示问题。</p>
-        <div class="project-meta"><span><i class="language-dot" aria-hidden="true"></i>FPGA / 串口交互</span><span>2026年9—10月 · 已完成</span><a href="projects.html#fpga-public">公开说明与联调图</a><a class="repo-link" href="https://github.com/Jingzhe-chen714/fpga" target="_blank" rel="noopener noreferrer" aria-label="查看 Ti60 原项目私有仓库">原仓库（私有）</a></div>
-      </article>
-      <article class="home-project">
-        <div class="project-line"><h3><a data-page="projects" href="projects.html">字符串集合与数据结构实践</a></h3><span class="project-type">基础练习</span></div>
-        <p>负责集合实现与测试。用数组和链表实现字符串集合，检查重复元素、容量与删除边界。</p>
-        <div class="project-meta"><span><i class="language-dot c" aria-hidden="true"></i>C</span><span>2026年9月起 · 进行中</span><a class="repo-link" href="https://gitee.com/chen-xiaoyu33/data-structure-course-design" target="_blank" rel="noopener noreferrer" aria-label="查看数据结构项目的 Gitee 仓库">Gitee 仓库</a></div>
-      </article>
-      <article class="home-project">
-        <div class="project-line"><h3><a data-page="projects" href="projects.html">本地 OCR 图片与文档识别</a></h3><span class="project-type">团队项目</span></div>
-        <p>参与的桌面工具项目，支持图片与 PDF 识别、结果编辑和历史检索。</p>
-        <div class="project-meta"><span><i class="language-dot python" aria-hidden="true"></i>Python</span><span>2026年7月 · 已完成</span><a class="repo-link" href="https://github.com/weijiayue19/project6" target="_blank" rel="noopener noreferrer" aria-label="查看 OCR 项目的 GitHub 仓库">GitHub 仓库</a></div>
-      </article>
-    </section>
-
-    <section class="home-section" aria-labelledby="home-notes">
-      <div class="section-head"><h2 id="home-notes">最近记录</h2><a data-page="journal" href="learning.html">全部记录</a></div>
-      <article class="note-row"><h3><a data-page="journal" href="learning.html">FPGA联调与硬件配置</a></h3><time datetime="2026-10">2026-10</time><p>板卡资源有限，补充分配器和采集卡完成联调。</p></article>
-      <article class="note-row"><h3><a data-page="journal" href="learning.html">同步显示问题的解决</a></h3><time datetime="2026-10">2026-10</time><p>2026年9—10月完成，后续整理硬件连接与配置说明。</p></article>
-      <article class="note-row"><h3><a data-page="journal" href="learning.html">集合边界测试</a></h3><time datetime="2026-09">2026-09</time><p>重复添加、空集合、删除边界和清空后复用。</p></article>
-    </section>
   </div>
-</div>
-<section class="section" aria-label="主页说明"><h2>关于这个主页</h2><p class="about-copy">本网页记录了我的个人信息、技能实践和2026年7月至10月的项目经历。项目包括FPGA串口界面、数据结构集合与测试，以及OCR团队工具。</p><p class="about-copy">页面提供OCR界面截图、集合测试结果图与运行记录，并使用三个独立页面组织内容。学习记录包含问题现象、处理过程和结果，支持搜索、新增记录及反馈草稿表单。</p><p class="about-copy">后续将补充硬件配置细节、长期运行记录和集合异常测试，持续维护项目文档。</p><details><summary>源码、运行方式与更新方法</summary><p>网站由 index.html、learning.html、projects.html 三个独立页面组成，通过相对路径互相跳转。解压完整源码后双击 index.html；也可运行 python -m http.server 8765，然后访问 http://localhost:8765/。正文和样式在 templates/ 中维护，修改后运行 python tools/build.py。表单记录只保存在当前浏览器，公开更新须同步到源码。在线地址：https://Jingzhe-chen714.github.io/personal-growth-homepage/。</p><p><a href="https://github.com/Jingzhe-chen714/personal-growth-homepage">主页代码仓库</a> · <a href="https://github.com/Jingzhe-chen714/personal-growth-homepage/blob/main/README.md">README 与运行说明</a> · <a href="screenshots/首页完整截图.jpg">首页完整截图</a></p></details></section></div><div class="view" data-view="journal"><header class="page-title"><div class="title-line"><h1>学习记录</h1></div><p>以下按实际参与月份记录，更新截至2026年11月15日；2026年7—10月的项目实践均已发生。</p></header><div class="searchbar js-only"><div class="search-field"><label for="note-search">搜索学习记录</label><input id="note-search" type="search" placeholder="试试：串口、同步、集合" maxlength="100"></div><div class="filters" aria-label="学习记录分类"><button class="filter" data-note-filter="全部" aria-pressed="true" type="button">全部</button><button class="filter" data-note-filter="FPGA" aria-pressed="false" type="button">FPGA</button><button class="filter" data-note-filter="C 语言" aria-pressed="false" type="button">C 语言</button></div></div><p class="result-info" id="note-count" aria-live="polite">共 3 条学习记录</p><div class="journal-layout"><div><div id="notes"><article class="entry" data-category="FPGA"><div class="entry-meta"><time datetime="2026-10">2026-10 · 项目复盘</time><span class="tag">FPGA</span><span>项目已完成</span></div><h2>FPGA联调与显示同步</h2><div class="entry-grid"><b>学到什么</b><p>负责电脑端串口界面，并参与软硬件联调，理解板端资源、视频输出和电脑显示之间的关系。</p><b>遇到问题</b><p>现场显示器输出正常，但电脑端在接入分配器和采集卡前严重卡顿，长时间工作后会黑屏。原有板卡资源与硬件配置无法支撑预期的同步显示。</p><b>处理 / 下一步</b><p>已购买并加入分配器和采集卡，补充硬件配置，解决电脑端卡顿、长时间工作后黑屏的同步显示问题。项目于2026年9—10月完成；后续继续记录设备型号、连接步骤与长时间运行情况。</p></div><div class="entry-source">相关项目：<a href="https://github.com/Jingzhe-chen714/fpga" target="_blank" rel="noopener noreferrer">FPGA项目源码与说明</a></div></article><article class="entry" data-category="C 语言"><div class="entry-meta"><time datetime="2026-09">2026-09 · 项目复盘</time><span class="tag">C 语言</span><span>项目进行中</span></div><h2>集合实现与边界测试</h2><div class="entry-grid"><b>学到什么</b><p>从2026年9月开始，负责数据结构项目中的集合实现与测试，比较数组和链表的存储方式。</p><b>遇到问题</b><p>例如，重复添加apple后集合大小应保持3；99字节字符串应允许添加，100字节字符串应被拒绝；满容量并集失败时，原结果应保留。链表还需要覆盖首尾节点删除、释放与复用。</p><b>处理 / 下一步</b><p>集合源码与测试记录已整理到仓库；项目仍在进行，后续继续补充异常分配、内存检查和设计报告。</p></div><div class="entry-source">相关项目：<a href="https://gitee.com/chen-xiaoyu33/data-structure-course-design" target="_blank" rel="noopener noreferrer">集合源码与测试</a></div></article><article class="entry" data-category="Python"><div class="entry-meta"><time datetime="2026-07">2026-07 · 项目复盘</time><span class="tag">Python</span><span>项目已完成</span></div><h2>本地OCR工具项目复盘</h2><div class="entry-grid"><b>学到什么</b><p>2026年7月参与团队OCR项目，围绕图片与文档识别，了解识别结果编辑、SQLite历史记录和桌面界面的组合。</p><b>遇到问题</b><p>需要把文件导入、识别、结果编辑与历史检索组织成完整流程。这里记录项目实践目标，具体个人模块将继续补充。</p><b>处理 / 下一步</b><p>团队项目已完成，仓库包含Python、PaddleOCR、Tkinter与SQLite相关源码和使用说明，可继续复盘代码结构与运行方式。</p></div><div class="entry-source">相关项目：<a href="https://github.com/weijiayue19/project6" target="_blank" rel="noopener noreferrer">OCR团队项目</a></div></article></div><p id="note-empty" class="empty" hidden>没有找到匹配的记录，试试其他关键词或分类。</p></div></div><details class="write-box" aria-labelledby="write-title"><summary id="write-title">添加学习记录</summary><p class="hint">启用脚本时，记录仅保存到当前浏览器并可导出；无脚本时，使用邮件客户端撰写记录，不会自动发送。</p><form id="note-form" action="mailto:166528786@qq.com?subject=学习记录分享" method="post" enctype="text/plain"><div class="form-grid"><div><label for="new-title">标题 *</label><input id="new-title" name="title" required maxlength="80" placeholder="这一次，我弄懂了什么？"></div><div><label for="new-date">整理日期 *</label><input id="new-date" name="date" type="date" value="2026-11-15" required min="2000-01-01" max="2100-12-31"></div><div class="full"><label for="new-what">学了什么 *</label><textarea id="new-what" name="what" required maxlength="1200" placeholder="具体任务、知识点或作品"></textarea></div><div class="full"><label for="new-problem">遇到什么问题 *</label><textarea id="new-problem" name="problem" required maxlength="1200" placeholder="描述现象，也可以记录还没理解的地方"></textarea></div><div class="full"><label for="new-solution">如何处理 / 下一步 *</label><textarea id="new-solution" name="solution" required maxlength="1200" placeholder="写清已做的尝试和仍需验证的部分"></textarea></div></div><div class="form-actions"><button type="submit" class="button">打开记录邮件</button><button id="export-notes" type="button" class="button secondary js-only">导出我的记录</button></div><p id="form-status" class="status" role="status"></p></form></details><!-- 反馈通过表单生成草稿，由访客复制或使用邮件发送；本站没有留言服务器。 -->
+  <div class="intro-learning"><h2>目前在学</h2><p>C / 数据结构 / 硬件交互</p></div>
+</section>
+
+<section class="portfolio" aria-labelledby="home-projects">
+  <div class="section-head"><h2 id="home-projects">项目</h2><a data-page="projects" href="projects.html">全部项目 ↗</a></div>
+  <div class="project-grid">
+    <article class="project-card">
+      <a class="project-cover" href="projects.html#fpga-public" aria-label="查看 FPGA 项目详情"><img src="assets/evidence/fpga-field-photo.jpg" width="2000" height="1500" alt="FPGA 联调实拍：开发板、连接线和显示图像处理效果的三块屏幕" fetchpriority="high"></a>
+      <h3><a href="projects.html#fpga-public"><span>FPGA 图像处理</span><span>与串口控制</span></a></h3>
+      <p class="card-date"><time datetime="2026-09">2026.09</time>—<time datetime="2026-10">10</time> · 已完成</p>
+      <p class="card-description">负责电脑端串口界面与设备联调，补充硬件配置，解决同步显示问题。</p>
+      <a class="card-link" href="projects.html#fpga-public">查看项目 ↗</a>
+    </article>
+    <article class="project-card">
+      <a class="project-cover" href="projects.html#set-project" aria-label="查看字符串集合项目详情"><img src="assets/evidence/set-test-preview.svg" width="640" height="400" alt="集合实测输出节选排版图：数组与链表已有测试均通过"></a>
+      <h3><a href="projects.html#set-project"><span>字符串集合</span><span>与数据结构</span></a></h3>
+      <p class="card-date"><time datetime="2026-09">2026.09</time> 起 · 进行中</p>
+      <p class="card-description">使用数组与链表实现字符串集合，负责集合功能与边界测试。</p>
+      <a class="card-link" href="projects.html#set-project">查看项目 ↗</a>
+    </article>
+    <article class="project-card">
+      <a class="project-cover" href="projects.html#ocr-project" aria-label="查看 OCR 项目详情"><img class="contain" src="assets/evidence/ocr-workbench.png" width="2620" height="1692" alt="OCR 团队工具原有初始界面，包含图片导入与识别结果区域"></a>
+      <h3><a href="projects.html#ocr-project"><span>本地 OCR 图片</span><span>与文档识别</span></a></h3>
+      <p class="card-date"><time datetime="2026-07">2026.07</time> · 已完成</p>
+      <p class="card-description">参与团队桌面工具，支持图片与 PDF 识别、结果编辑及历史检索。</p>
+      <a class="card-link" href="projects.html#ocr-project">查看项目 ↗</a>
+    </article>
+  </div>
+</section>
+
+<section class="recent-notes" aria-labelledby="home-notes">
+  <div class="section-head"><h2 id="home-notes">最近的学习记录</h2><a data-page="journal" href="learning.html">全部记录 ↗</a></div>
+  <article class="note-row"><time datetime="2026-10">2026.10</time><h3><a href="learning.html">FPGA 联调与硬件配置</a></h3><p>记录电脑端卡顿、黑屏现象与配置调整。</p><a class="note-arrow" href="learning.html" aria-label="阅读 FPGA 联调记录">→</a></article>
+  <article class="note-row"><time datetime="2026-10">2026.10</time><h3><a href="learning.html">同步显示问题的解决</a></h3><p>区分显示器与电脑端表现，整理处理结果。</p><a class="note-arrow" href="learning.html" aria-label="阅读同步显示复盘">→</a></article>
+  <article class="note-row"><time datetime="2026-09">2026.09</time><h3><a href="learning.html">集合边界测试</a></h3><p>检查重复添加、空集合与删除边界。</p><a class="note-arrow" href="learning.html" aria-label="阅读集合测试记录">→</a></article>
+</section>
+
+<section class="next-step" aria-label="后续计划"><h2>接下来</h2><p>补充硬件连接与长期运行记录，继续完善集合边界测试。</p></section>
+
+<details class="site-notes"><summary>技能证据与主页说明</summary>
+  <section id="skills" aria-labelledby="skills-title"><h2 id="skills-title">技能与作品证据</h2>
+    <ul class="practice-list">
+      <li><b>C 语言：集合与测试</b><span>实现数组和链表集合，检查重复元素、空集合、容量与删除边界。</span><a href="https://gitee.com/chen-xiaoyu33/data-structure-course-design/tree/master/task1_set" target="_blank" rel="noopener noreferrer">集合源码与测试</a> · <a href="assets/evidence/set-test-report.txt">实测记录</a></li>
+      <li><b>串口界面与设备联调</b><span>负责电脑端控制界面，补充分配器和采集卡，解决同步显示问题。</span><a href="projects.html#fpga-public">项目实拍、分工与处理过程</a></li>
+      <li><b>Git 与文档管理</b><span>维护主页代码、运行说明和更新记录。</span><a href="https://github.com/Jingzhe-chen714/personal-growth-homepage/commits/main" target="_blank" rel="noopener noreferrer">公开版本记录</a></li>
+    </ul>
+  </section>
+  <section aria-labelledby="about-site"><h2 id="about-site">关于这个主页</h2>
+    <p class="about-copy">这里记录个人信息、技能实践和 FPGA、数据结构、OCR 项目经历，按实际参与月份整理学习过程。</p>
+    <p class="about-copy">项目页提供现场照片、项目海报、OCR 界面、集合测试记录与仓库链接；学习记录支持搜索、本地新增与反馈草稿。</p>
+    <p class="about-copy">后续继续补充设备配置、长期运行观察和集合边界测试，也尝试大模型应用开发。</p>
+  </section>
+  <p class="tiny">网站由 index.html、learning.html、projects.html 三个独立页面组成。解压源码后双击 index.html；也可运行 python -m http.server 8765。修改模板后运行 python tools/build.py。<a href="https://github.com/Jingzhe-chen714/personal-growth-homepage/blob/main/README.md">运行与更新说明</a> · <a href="screenshots/首页完整截图.jpg">首页完整截图</a></p>
+</details>
+</div><div class="view" data-view="journal"><header class="page-title"><div class="title-line"><h1>学习记录</h1></div><p>以下按实际参与月份记录，更新截至2026年11月15日；2026年7—10月的项目实践均已发生。</p></header><div class="searchbar js-only"><div class="search-field"><label for="note-search">搜索学习记录</label><input id="note-search" type="search" placeholder="试试：串口、同步、集合" maxlength="100"></div><div class="filters" aria-label="学习记录分类"><button class="filter" data-note-filter="全部" aria-pressed="true" type="button">全部</button><button class="filter" data-note-filter="FPGA" aria-pressed="false" type="button">FPGA</button><button class="filter" data-note-filter="C 语言" aria-pressed="false" type="button">C 语言</button></div></div><p class="result-info" id="note-count" aria-live="polite">共 3 条学习记录</p><div class="journal-layout"><div><div id="notes"><article class="entry" data-category="FPGA"><div class="entry-meta"><time datetime="2026-10">2026-10 · 项目复盘</time><span class="tag">FPGA</span><span>项目已完成</span></div><h2>FPGA联调与显示同步</h2><div class="entry-grid"><b>学到什么</b><p>负责电脑端串口界面，并参与软硬件联调，理解板端资源、视频输出和电脑显示之间的关系。</p><b>遇到问题</b><p>现场显示器输出正常，但电脑端在接入分配器和采集卡前严重卡顿，长时间工作后会黑屏。原有板卡资源与硬件配置无法支撑预期的同步显示。</p><b>处理 / 下一步</b><p>已购买并加入分配器和采集卡，补充硬件配置，解决电脑端卡顿、长时间工作后黑屏的同步显示问题。项目于2026年9—10月完成；后续继续记录设备型号、连接步骤与长时间运行情况。</p></div><div class="entry-source">相关项目：<a href="https://github.com/Jingzhe-chen714/fpga" target="_blank" rel="noopener noreferrer">FPGA项目源码与说明</a></div></article><article class="entry" data-category="C 语言"><div class="entry-meta"><time datetime="2026-09">2026-09 · 项目复盘</time><span class="tag">C 语言</span><span>项目进行中</span></div><h2>集合实现与边界测试</h2><div class="entry-grid"><b>学到什么</b><p>从2026年9月开始，负责数据结构项目中的集合实现与测试，比较数组和链表的存储方式。</p><b>遇到问题</b><p>例如，重复添加apple后集合大小应保持3；99字节字符串应允许添加，100字节字符串应被拒绝；满容量并集失败时，原结果应保留。链表还需要覆盖首尾节点删除、释放与复用。</p><b>处理 / 下一步</b><p>集合源码与测试记录已整理到仓库；项目仍在进行，后续继续补充异常分配、内存检查和设计报告。</p></div><div class="entry-source">相关项目：<a href="https://gitee.com/chen-xiaoyu33/data-structure-course-design" target="_blank" rel="noopener noreferrer">集合源码与测试</a></div></article><article class="entry" data-category="Python"><div class="entry-meta"><time datetime="2026-07">2026-07 · 项目复盘</time><span class="tag">Python</span><span>项目已完成</span></div><h2>本地OCR工具项目复盘</h2><div class="entry-grid"><b>学到什么</b><p>2026年7月参与团队OCR项目，围绕图片与文档识别，了解识别结果编辑、SQLite历史记录和桌面界面的组合。</p><b>遇到问题</b><p>需要把文件导入、识别、结果编辑与历史检索组织成完整流程。这里记录项目实践目标，具体个人模块将继续补充。</p><b>处理 / 下一步</b><p>团队项目已完成，仓库包含Python、PaddleOCR、Tkinter与SQLite相关源码和使用说明，可继续复盘代码结构与运行方式。</p></div><div class="entry-source">相关项目：<a href="https://github.com/weijiayue19/project6" target="_blank" rel="noopener noreferrer">OCR团队项目</a></div></article></div><p id="note-empty" class="empty" hidden>没有找到匹配的记录，试试其他关键词或分类。</p></div></div><details class="write-box" aria-labelledby="write-title"><summary id="write-title">添加学习记录</summary><p class="hint">启用脚本时，记录仅保存到当前浏览器并可导出；无脚本时，使用邮件客户端撰写记录，不会自动发送。</p><form id="note-form" action="mailto:166528786@qq.com?subject=学习记录分享" method="post" enctype="text/plain"><div class="form-grid"><div><label for="new-title">标题 *</label><input id="new-title" name="title" required maxlength="80" placeholder="这一次，我弄懂了什么？"></div><div><label for="new-date">整理日期 *</label><input id="new-date" name="date" type="date" value="2026-11-15" required min="2000-01-01" max="2100-12-31"></div><div class="full"><label for="new-what">学了什么 *</label><textarea id="new-what" name="what" required maxlength="1200" placeholder="具体任务、知识点或作品"></textarea></div><div class="full"><label for="new-problem">遇到什么问题 *</label><textarea id="new-problem" name="problem" required maxlength="1200" placeholder="描述现象，也可以记录还没理解的地方"></textarea></div><div class="full"><label for="new-solution">如何处理 / 下一步 *</label><textarea id="new-solution" name="solution" required maxlength="1200" placeholder="写清已做的尝试和仍需验证的部分"></textarea></div></div><div class="form-actions"><button type="submit" class="button">打开记录邮件</button><button id="export-notes" type="button" class="button secondary js-only">导出我的记录</button></div><p id="form-status" class="status" role="status"></p></form></details><!-- 反馈通过表单生成草稿，由访客复制或使用邮件发送；本站没有留言服务器。 -->
 <section class="write-box feedback" aria-labelledby="feedback-heading">
   <h2 id="feedback-heading">留言与建议</h2>
   <p class="hint">提交后先生成草稿，由你确认发送。启用脚本时可在本页复制；无脚本时使用已配置的邮件客户端。请勿填写敏感信息。</p>
@@ -328,13 +342,17 @@ main .view > .filters { max-width: 900px; margin: 0 auto; }
   </form>
   <noscript><p class="hint">当前未启用 JavaScript，原生表单会打开邮件撰写窗口，不会自动发送。若未配置邮件客户端，请手动将内容发送到上方邮箱。</p></noscript>
 </section>
-</div><div class="view" data-view="projects"><header class="page-title"><div class="title-line"><h1>项目</h1></div><p>整理目前参与的项目、具体分工和遇到的问题。</p></header><div class="filters js-only" aria-label="项目分类"><button class="filter" data-project-filter="全部" aria-pressed="true" type="button">全部作品</button><button class="filter" data-project-filter="FPGA" aria-pressed="false" type="button">FPGA / 交互</button><button class="filter" data-project-filter="C 语言" aria-pressed="false" type="button">C / 数据结构</button></div><p class="result-info" id="project-count" aria-live="polite">共 2 个项目</p>
-<article class="project" id="fpga-public" data-category="FPGA"><div><div class="tags"><span class="tag">FPGA</span><span class="tag">串口界面</span><span class="tag">团队项目</span></div><h2>Ti60 实时视觉与串口控制</h2><p class="summary">面向摄像头图像处理和电脑端控制的系统。仓库包括 Sobel / Canny 边缘处理、几何识别、板端工程、电脑控制台与验证资料。</p><dl><dt>解决问题</dt><dd>通过电脑端串口界面控制视觉处理功能，连接板端处理与显示输出。</dd><dt>我的分工</dt><dd>负责电脑端串口界面。具体视觉算法、硬件与系统整体成果属于团队项目范围。</dd><dt>使用技术</dt><dd>串口交互、电脑控制台；系统整体基于 Ti60 FPGA 与 Verilog / SystemVerilog 工程。</dd><dt>主要困难</dt><dd>显示器正常，电脑端却严重卡顿，长时间工作后黑屏。原板卡资源与硬件配置不足以支持预期的同步显示。</dd><dt>当前进展</dt><dd>2026年9—10月完成。已购买并加入分配器和采集卡，补充硬件配置，解决同步显示问题。</dd></dl><figure class="evidence"><a href="assets/evidence/fpga-field-notes.svg" target="_blank" rel="noopener noreferrer" aria-label="打开项目证据原图"><img src="assets/evidence/fpga-field-notes.svg" alt="FPGA公开联调示意：显示器正常而电脑端卡顿、久运行后黑屏；加入分配器与采集卡后解决同步显示问题"></a><figcaption>点击可打开原图。根据本人复盘制作的现象与处理示意，非现场截图。<a href="https://github.com/Jingzhe-chen714/personal-growth-homepage/blob/main/docs/fpga-project.md">公开项目说明与复现检查清单</a>可直接查看。</figcaption></figure><details><summary>文字版前后观察</summary><table class="evidence-table"><caption>联调前后的实际观察</caption><thead><tr><th scope="col">观察位置</th><th scope="col">补充硬件前</th><th scope="col">处理与结果</th></tr></thead><tbody><tr><th scope="row">显示器</th><td>输出正常</td><td>保留正常显示作为对照</td></tr><tr><th scope="row">电脑端界面</th><td>严重卡顿，长时间工作后黑屏</td><td>加入分配器和采集卡，解决同步显示问题</td></tr></tbody></table></details><div class="project-links"><a href="https://github.com/Jingzhe-chen714/fpga" target="_blank" rel="noopener noreferrer">原项目仓库（私有）</a><a data-page="journal" href="learning.html">阅读联调复盘</a></div><details><summary>查看项目结构与后续验证计划</summary><pre>FPGA_engin/        板端工程入口与 RTL
+</div><div class="view" data-view="projects"><header class="page-title"><div class="title-line"><h1>项目</h1></div><p>整理目前参与的项目、具体分工和遇到的问题。</p></header><div class="filters js-only" aria-label="项目分类"><button class="filter" data-project-filter="全部" aria-pressed="true" type="button">全部作品</button><button class="filter" data-project-filter="FPGA" aria-pressed="false" type="button">FPGA / 交互</button><button class="filter" data-project-filter="C 语言" aria-pressed="false" type="button">C / 数据结构</button><button class="filter" data-project-filter="Python" aria-pressed="false" type="button">Python / OCR</button></div><p class="result-info" id="project-count" aria-live="polite">共 3 个项目</p>
+<article class="project" id="fpga-public" data-category="FPGA"><div><div class="tags"><span class="tag">FPGA</span><span class="tag">串口界面</span><span class="tag">团队项目</span></div><h2>Ti60 实时视觉与串口控制</h2><p class="summary">面向摄像头图像处理和电脑端控制的系统。仓库包括 Sobel / Canny 边缘处理、几何识别、板端工程、电脑控制台与验证资料。</p><dl><dt>解决问题</dt><dd>通过电脑端串口界面控制视觉处理功能，连接板端处理与显示输出。</dd><dt>我的分工</dt><dd>负责电脑端串口界面。具体视觉算法、硬件与系统整体成果属于团队项目范围。</dd><dt>使用技术</dt><dd>串口交互、电脑控制台；系统整体基于 Ti60 FPGA 与 Verilog / SystemVerilog 工程。</dd><dt>主要困难</dt><dd>显示器正常，电脑端却严重卡顿，长时间工作后黑屏。原板卡资源与硬件配置不足以支持预期的同步显示。</dd><dt>当前进展</dt><dd>2026年9—10月完成。已购买并加入分配器和采集卡，补充硬件配置，解决同步显示问题。</dd></dl><figure class="evidence"><a href="assets/evidence/fpga-field-photo.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看 FPGA 联调现场照片"><img src="assets/evidence/fpga-field-photo.jpg" width="2000" height="1500" alt="项目联调现场：FPGA开发板、连接线、显示器与电脑端图像处理界面"></a><figcaption>项目联调实拍，由本人提供。点击可查看大图。<a href="https://github.com/Jingzhe-chen714/personal-growth-homepage/blob/main/docs/fpga-project.md">公开项目说明与复现检查清单</a>。</figcaption></figure>
+<details class="poster-details"><summary>项目海报</summary><figure class="evidence poster-evidence"><a href="assets/evidence/fpga-poster.png" target="_blank" rel="noopener noreferrer" aria-label="查看 FPGA 项目海报"><img src="assets/evidence/fpga-poster.png" width="1024" height="1536" alt="团队项目海报：Ti60 FPGA 图像边缘检测与动态观察"></a><figcaption>项目海报；其中算法与动态效果为视觉示意，非实测截图。</figcaption></figure></details>
+<details><summary>文字版前后观察</summary><table class="evidence-table"><caption>联调前后的实际观察</caption><thead><tr><th scope="col">观察位置</th><th scope="col">补充硬件前</th><th scope="col">处理与结果</th></tr></thead><tbody><tr><th scope="row">显示器</th><td>输出正常</td><td>保留正常显示作为对照</td></tr><tr><th scope="row">电脑端界面</th><td>严重卡顿，长时间工作后黑屏</td><td>加入分配器和采集卡，解决同步显示问题</td></tr></tbody></table></details><div class="project-links"><a href="https://github.com/Jingzhe-chen714/fpga" target="_blank" rel="noopener noreferrer">原项目仓库（私有）</a><a data-page="journal" href="learning.html">阅读联调复盘</a></div><details><summary>查看项目结构与后续验证计划</summary><pre>FPGA_engin/        板端工程入口与 RTL
 开发源码/pc_v11/   电脑控制台源码
 开发源码/tb/       测试台
 说明文档/          使用与交付说明
-验证记录/          已有仿真与报告</pre><p>已补充分配器和采集卡。后续完善配置清单和连接步骤，方便再次搭建。</p></details><p class="tiny">此页公开项目说明、配置与处理记录；原始工程由私有仓库维护。</p></div></article>
-<article class="project" data-category="C 语言"><div><div class="tags"><span class="tag">C 语言</span><span class="tag">集合</span><span class="tag">测试</span></div><h2>字符串集合与数据结构实践</h2><p class="summary">项目从2026年9月开始，仍在进行，包含集合、英文文本排版、外部排序等练习。我参与的部分是集合实现与测试，用两种结构理解相同操作的实现差异。</p><dl><dt>解决问题</dt><dd>用数组和链表表示字符串集合，实现添加、删除、并集、交集、差集、子集判断等操作。</dd><dt>我的分工</dt><dd>负责集合与测试；针对重复元素、空集合、删除边界、容量限制和结果写回检查程序行为。</dd><dt>使用技术</dt><dd>C11、数组、链表、动态内存管理、assert 断言测试、Git。</dd><dt>关键挑战</dt><dd>需要兼顾容量和字符串边界，并正确释放链表节点与字符串；这是实现及测试的关注点。</dd><dt>当前证据</dt><dd>仓库保留数组与链表源码、测试程序和测试记录。分配失败模拟与内存检测可继续补充。</dd></dl><figure class="evidence"><a href="assets/evidence/set-test.svg" target="_blank" rel="noopener noreferrer" aria-label="打开项目证据原图"><img src="assets/evidence/set-test.svg" alt="集合测试结果图：数组和链表测试均通过，列出输入、并集、交集和差集"></a><figcaption>2026-11-15实际重新编译并运行当前本地仓库副本的数组、链表测试。<a href="assets/evidence/set-test-report.txt">查看完整测试输出与源码提交号</a>。</figcaption></figure><div class="project-links"><a href="https://gitee.com/chen-xiaoyu33/data-structure-course-design" target="_blank" rel="noopener noreferrer">Gitee 仓库</a><a href="https://gitee.com/chen-xiaoyu33/data-structure-course-design/tree/master/task1_set" target="_blank" rel="noopener noreferrer">查看集合源码与测试</a></div><details open><summary>代码证据：遍历链表判断成员是否存在</summary><pre><code>int set_contains(const LinkedSet *set, const char *text)
+验证记录/          已有仿真与报告</pre><p>已补充分配器和采集卡。后续完善配置清单和连接步骤，方便再次搭建。</p></details><p class="tiny">此页公开现场照片、项目海报、配置与处理记录；原始工程由私有仓库维护。</p></div></article>
+
+<article class="project" id="set-project" data-category="C 语言"><div><div class="tags"><span class="tag">C 语言</span><span class="tag">集合</span><span class="tag">测试</span></div><h2>字符串集合与数据结构实践</h2><p class="summary">项目从2026年9月开始，仍在进行，包含集合、英文文本排版、外部排序等练习。我参与的部分是集合实现与测试，用两种结构理解相同操作的实现差异。</p><dl><dt>解决问题</dt><dd>用数组和链表表示字符串集合，实现添加、删除、并集、交集、差集、子集判断等操作。</dd><dt>我的分工</dt><dd>负责集合与测试；针对重复元素、空集合、删除边界、容量限制和结果写回检查程序行为。</dd><dt>使用技术</dt><dd>C11、数组、链表、动态内存管理、assert 断言测试、Git。</dd><dt>关键挑战</dt><dd>需要兼顾容量和字符串边界，并正确释放链表节点与字符串；这是实现及测试的关注点。</dd><dt>当前证据</dt><dd>仓库保留数组与链表源码、测试程序和测试记录。分配失败模拟与内存检测可继续补充。</dd></dl><figure class="evidence"><a href="assets/evidence/set-test.svg" target="_blank" rel="noopener noreferrer" aria-label="打开项目证据原图"><img src="assets/evidence/set-test.svg" alt="集合测试结果图：数组和链表测试均通过，列出输入、并集、交集和差集"></a><figcaption>2026-11-15实际重新编译并运行当前本地仓库副本的数组、链表测试。<a href="assets/evidence/set-test-report.txt">查看完整测试输出与源码提交号</a>。</figcaption></figure>
+<div class="project-links"><a href="https://gitee.com/chen-xiaoyu33/data-structure-course-design" target="_blank" rel="noopener noreferrer">Gitee 仓库</a><a href="https://gitee.com/chen-xiaoyu33/data-structure-course-design/tree/master/task1_set" target="_blank" rel="noopener noreferrer">查看集合源码与测试</a></div><details open><summary>代码证据：遍历链表判断成员是否存在</summary><pre><code>int set_contains(const LinkedSet *set, const char *text)
 {
     const Node *current = set-&gt;head;
     while (current != NULL) {
@@ -343,7 +361,11 @@ main .view > .filters { max-width: 900px; margin: 0 auto; }
     }
     return 0;
 }</code></pre><p>摘编自 task1_set/linked_set.c 的 set_contains，压缩了部分排版。逐个比较字符串，命中返回 1，遍历结束返回 0；若忽略字符串比较长度因素，时间复杂度为 O(n)。</p></details></div></article>
-<section class="section"><div class="section-heading"><div><h2>其他协作记录</h2></div></div><h3>本地 OCR 图片与文档识别工具</h3><p class="about-copy">我参与的另一个团队项目是 <a href="https://github.com/weijiayue19/project6" target="_blank" rel="noopener noreferrer">project6</a>。项目采用 Python、PaddleOCR、Tkinter 与 SQLite，提供图片 / PDF 识别、识别结果编辑和历史检索。项目于2026年7月完成，后续继续补充实践笔记。</p><figure class="evidence"><a href="assets/evidence/ocr-workbench.png" target="_blank" rel="noopener noreferrer" aria-label="打开项目证据原图"><img src="assets/evidence/ocr-workbench.png" alt="OCR团队项目原有截图：快速识别工作台的图片导入区、结果编辑区和操作按钮"></a><figcaption>团队项目原有工作台截图，展示初始界面，来自 project6/html/assets/主工作台.png；并非本次重新运行OCR得到的识别结果。</figcaption></figure><div class="project-links"><a href="https://github.com/weijiayue19/project6" target="_blank" rel="noopener noreferrer">GitHub 仓库：weijiayue19/project6</a></div></section><p class="project-end"><a data-page="journal" href="learning.html">查看相关学习记录</a></p></div></main><footer class="wrap footer"><span>© 2026 陈小雨</span><span>更新于 2026-11-15</span></footer><script>
+
+<article class="project" id="ocr-project" data-category="Python"><div class="tags"><span class="tag">Python</span><span class="tag">OCR</span><span class="tag">团队项目</span></div><h2>本地 OCR 图片与文档识别</h2><p class="summary">2026年7月完成的团队桌面工具，支持图片与PDF导入、文字识别、结果编辑和历史检索。</p><dl><dt>解决问题</dt><dd>将文件导入、识别、编辑与历史查询组织成完整的本地工作流程。</dd><dt>参与范围</dt><dd>参与团队项目实践；此处展示团队工具界面，个人模块与代码复盘继续整理。</dd><dt>使用技术</dt><dd>Python、PaddleOCR、Tkinter、SQLite。</dd><dt>实践关注</dt><dd>识别结果需要能够修改和再次检索，界面操作与历史记录需要衔接。</dd><dt>当前进展</dt><dd>团队项目已完成；保留原有工作台截图与源码链接，后续补充实践笔记。</dd></dl><figure class="evidence"><a href="assets/evidence/ocr-workbench.png" target="_blank" rel="noopener noreferrer" aria-label="打开 OCR 工作台原图"><img src="assets/evidence/ocr-workbench.png" alt="OCR团队项目原有截图：图片导入区、结果编辑区和操作按钮"></a><figcaption>来自团队仓库 project6/html/assets/主工作台.png 的初始界面截图，并非本次重新运行得到的识别结果。</figcaption></figure>
+<div class="project-links"><a href="https://github.com/weijiayue19/project6" target="_blank" rel="noopener noreferrer">GitHub 仓库：weijiayue19/project6</a><a href="learning.html">相关学习记录</a></div></article>
+<p class="project-end"><a data-page="journal" href="learning.html">查看相关学习记录</a></p>
+</div></main><footer class="wrap footer"><span>© 2026 陈小雨</span><span>更新于 2026.11.15</span><span class="footer-links"><a href="https://github.com/Jingzhe-chen714" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="mailto:166528786@qq.com">邮箱 ↗</a></span></footer><script>
 'use strict';
 (() => {
   // 渐进增强：无脚本时保留原生导航、阅读与邮件表单。

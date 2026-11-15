@@ -1,12 +1,11 @@
 """Build three independent pages and a self-contained HTML edition."""
 from pathlib import Path
-from html import escape
 
 ROOT = Path(__file__).resolve().parents[1]
 CSS = (ROOT / 'templates/style.css').read_text(encoding='utf-8')
 FEEDBACK = (ROOT / 'templates/feedback.html').read_text(encoding='utf-8')
 FEEDBACK_JS = (ROOT / 'templates/feedback.js').read_text(encoding='utf-8')
-ASSET_VERSION = '20261115-r5'
+ASSET_VERSION = '20261115-r6'
 HOME = (ROOT / 'templates/home.html').read_text(encoding='utf-8')
 
 def note(title, what, problem, solution, source, source_title, category, status, date="2026-11-14"):
@@ -22,24 +21,7 @@ JOURNAL = '''<header class="page-title"><div class="title-line"><h1>学习记录
 
 JOURNAL += FEEDBACK
 
-snippet = escape('''int set_contains(const LinkedSet *set, const char *text)
-{
-    const Node *current = set->head;
-    while (current != NULL) {
-        if (strcmp(current->text, text) == 0) return 1;
-        current = current->next;
-    }
-    return 0;
-}''')
-
-PROJECTS = '''<header class="page-title"><div class="title-line"><h1>项目</h1></div><p>整理目前参与的项目、具体分工和遇到的问题。</p></header><div class="filters js-only" aria-label="项目分类"><button class="filter" data-project-filter="全部" aria-pressed="true" type="button">全部作品</button><button class="filter" data-project-filter="FPGA" aria-pressed="false" type="button">FPGA / 交互</button><button class="filter" data-project-filter="C 语言" aria-pressed="false" type="button">C / 数据结构</button></div><p class="result-info" id="project-count" aria-live="polite">共 2 个项目</p>
-<article class="project" id="fpga-public" data-category="FPGA"><div><div class="tags"><span class="tag">FPGA</span><span class="tag">串口界面</span><span class="tag">团队项目</span></div><h2>Ti60 实时视觉与串口控制</h2><p class="summary">面向摄像头图像处理和电脑端控制的系统。仓库包括 Sobel / Canny 边缘处理、几何识别、板端工程、电脑控制台与验证资料。</p><dl><dt>解决问题</dt><dd>通过电脑端串口界面控制视觉处理功能，连接板端处理与显示输出。</dd><dt>我的分工</dt><dd>负责电脑端串口界面。具体视觉算法、硬件与系统整体成果属于团队项目范围。</dd><dt>使用技术</dt><dd>串口交互、电脑控制台；系统整体基于 Ti60 FPGA 与 Verilog / SystemVerilog 工程。</dd><dt>主要困难</dt><dd>显示器正常，电脑端却严重卡顿，长时间工作后黑屏。原板卡资源与硬件配置不足以支持预期的同步显示。</dd><dt>当前进展</dt><dd>2026年9—10月完成。已购买并加入分配器和采集卡，补充硬件配置，解决同步显示问题。</dd></dl><figure class="evidence"><a href="assets/evidence/fpga-field-notes.svg" target="_blank" rel="noopener noreferrer" aria-label="打开项目证据原图"><img src="assets/evidence/fpga-field-notes.svg" alt="FPGA公开联调示意：显示器正常而电脑端卡顿、久运行后黑屏；加入分配器与采集卡后解决同步显示问题"></a><figcaption>点击可打开原图。根据本人复盘制作的现象与处理示意，非现场截图。<a href="https://github.com/Jingzhe-chen714/personal-growth-homepage/blob/main/docs/fpga-project.md">公开项目说明与复现检查清单</a>可直接查看。</figcaption></figure><details><summary>文字版前后观察</summary><table class="evidence-table"><caption>联调前后的实际观察</caption><thead><tr><th scope="col">观察位置</th><th scope="col">补充硬件前</th><th scope="col">处理与结果</th></tr></thead><tbody><tr><th scope="row">显示器</th><td>输出正常</td><td>保留正常显示作为对照</td></tr><tr><th scope="row">电脑端界面</th><td>严重卡顿，长时间工作后黑屏</td><td>加入分配器和采集卡，解决同步显示问题</td></tr></tbody></table></details><div class="project-links"><a href="https://github.com/Jingzhe-chen714/fpga" target="_blank" rel="noopener noreferrer">原项目仓库（私有）</a><a data-page="journal" href="learning.html">阅读联调复盘</a></div><details><summary>查看项目结构与后续验证计划</summary><pre>FPGA_engin/        板端工程入口与 RTL
-开发源码/pc_v11/   电脑控制台源码
-开发源码/tb/       测试台
-说明文档/          使用与交付说明
-验证记录/          已有仿真与报告</pre><p>已补充分配器和采集卡。后续完善配置清单和连接步骤，方便再次搭建。</p></details><p class="tiny">此页公开项目说明、配置与处理记录；原始工程由私有仓库维护。</p></div></article>
-<article class="project" data-category="C 语言"><div><div class="tags"><span class="tag">C 语言</span><span class="tag">集合</span><span class="tag">测试</span></div><h2>字符串集合与数据结构实践</h2><p class="summary">项目从2026年9月开始，仍在进行，包含集合、英文文本排版、外部排序等练习。我参与的部分是集合实现与测试，用两种结构理解相同操作的实现差异。</p><dl><dt>解决问题</dt><dd>用数组和链表表示字符串集合，实现添加、删除、并集、交集、差集、子集判断等操作。</dd><dt>我的分工</dt><dd>负责集合与测试；针对重复元素、空集合、删除边界、容量限制和结果写回检查程序行为。</dd><dt>使用技术</dt><dd>C11、数组、链表、动态内存管理、assert 断言测试、Git。</dd><dt>关键挑战</dt><dd>需要兼顾容量和字符串边界，并正确释放链表节点与字符串；这是实现及测试的关注点。</dd><dt>当前证据</dt><dd>仓库保留数组与链表源码、测试程序和测试记录。分配失败模拟与内存检测可继续补充。</dd></dl><figure class="evidence"><a href="assets/evidence/set-test.svg" target="_blank" rel="noopener noreferrer" aria-label="打开项目证据原图"><img src="assets/evidence/set-test.svg" alt="集合测试结果图：数组和链表测试均通过，列出输入、并集、交集和差集"></a><figcaption>2026-11-15实际重新编译并运行当前本地仓库副本的数组、链表测试。<a href="assets/evidence/set-test-report.txt">查看完整测试输出与源码提交号</a>。</figcaption></figure><div class="project-links"><a href="https://gitee.com/chen-xiaoyu33/data-structure-course-design" target="_blank" rel="noopener noreferrer">Gitee 仓库</a><a href="https://gitee.com/chen-xiaoyu33/data-structure-course-design/tree/master/task1_set" target="_blank" rel="noopener noreferrer">查看集合源码与测试</a></div><details open><summary>代码证据：遍历链表判断成员是否存在</summary><pre><code>''' + snippet + '''</code></pre><p>摘编自 task1_set/linked_set.c 的 set_contains，压缩了部分排版。逐个比较字符串，命中返回 1，遍历结束返回 0；若忽略字符串比较长度因素，时间复杂度为 O(n)。</p></details></div></article>
-<section class="section"><div class="section-heading"><div><h2>其他协作记录</h2></div></div><h3>本地 OCR 图片与文档识别工具</h3><p class="about-copy">我参与的另一个团队项目是 <a href="https://github.com/weijiayue19/project6" target="_blank" rel="noopener noreferrer">project6</a>。项目采用 Python、PaddleOCR、Tkinter 与 SQLite，提供图片 / PDF 识别、识别结果编辑和历史检索。项目于2026年7月完成，后续继续补充实践笔记。</p><figure class="evidence"><a href="assets/evidence/ocr-workbench.png" target="_blank" rel="noopener noreferrer" aria-label="打开项目证据原图"><img src="assets/evidence/ocr-workbench.png" alt="OCR团队项目原有截图：快速识别工作台的图片导入区、结果编辑区和操作按钮"></a><figcaption>团队项目原有工作台截图，展示初始界面，来自 project6/html/assets/主工作台.png；并非本次重新运行OCR得到的识别结果。</figcaption></figure><div class="project-links"><a href="https://github.com/weijiayue19/project6" target="_blank" rel="noopener noreferrer">GitHub 仓库：weijiayue19/project6</a></div></section><p class="project-end"><a data-page="journal" href="learning.html">查看相关学习记录</a></p>'''
+PROJECTS = (ROOT / 'templates/projects.html').read_text(encoding='utf-8')
 
 JS = r'''
 'use strict';
@@ -156,7 +138,7 @@ def document(page, standalone=False):
     content=''.join(f'<div class="view" data-view="{k}">{v}</div>' for k,v in [('home',HOME),('journal',JOURNAL),('projects',PROJECTS)] if standalone or page==k)
     return f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="陈小雨的个人主页：项目、学习记录与编程实践。"><meta name="color-scheme" content="light"><title>{labels[page][0]} · 陈小雨</title>{style}</head>
-<body data-single="{str(standalone).lower()}"><a class="skip" href="#main">跳到主要内容</a><header class="site-header"><div class="wrap header-inner"><a class="brand" data-page="home" href="index.html">陈小雨</a><nav class="nav" aria-label="主导航">{nav}</nav><a class="github-link" href="https://github.com/Jingzhe-chen714" target="_blank" rel="noopener noreferrer">GitHub</a></div></header><main class="wrap" id="main"><noscript><p class="noscript">JavaScript 未启用：仍可访问三个页面、阅读全部内容并使用邮件表单。搜索可用浏览器的页面查找功能；本地保存、导出和筛选需要启用脚本。</p></noscript>{content}</main><footer class="wrap footer"><span>© 2026 陈小雨</span><span>更新于 2026-11-15</span></footer>{script}</body></html>'''
+<body data-single="{str(standalone).lower()}"><a class="skip" href="#main">跳到主要内容</a><header class="site-header"><div class="wrap header-inner"><a class="brand" data-page="home" href="index.html">陈小雨</a><nav class="nav" aria-label="主导航">{nav}</nav><a class="github-link" href="https://github.com/Jingzhe-chen714" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></header><main class="wrap" id="main"><noscript><p class="noscript">JavaScript 未启用：仍可访问三个页面、阅读全部内容并使用邮件表单。搜索可用浏览器的页面查找功能；本地保存、导出和筛选需要启用脚本。</p></noscript>{content}</main><footer class="wrap footer"><span>© 2026 陈小雨</span><span>更新于 2026.11.15</span><span class="footer-links"><a href="https://github.com/Jingzhe-chen714" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="mailto:166528786@qq.com">邮箱 ↗</a></span></footer>{script}</body></html>'''
 
 if __name__=='__main__':
     (ROOT/'assets').mkdir(exist_ok=True)

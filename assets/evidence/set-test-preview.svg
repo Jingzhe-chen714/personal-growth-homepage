@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">集合测试输出节选</title>
+  <desc id="desc">根据2026年11月15日已有数组与链表测试的真实输出排版，非终端截图。数组与链表测试均通过，输入集合为apple、banana、cherry和banana、cherry、orange。</desc>
+  <rect width="640" height="400" fill="#383b39"/>
+  <text x="35" y="48" fill="#eceee8" font-family="Microsoft YaHei,sans-serif" font-size="19">测试输出节选</text>
+  <path d="M0 70H640" stroke="#5a5d57"/>
+  <g font-family="Consolas,monospace" font-size="20" fill="#f0f1ed">
+    <text x="35" y="125">A = {apple, banana, cherry}</text>
+    <text x="35" y="165">B = {banana, cherry, orange}</text>
+    <text x="35" y="235" fill="#bedb88">array:  All tests passed.</text>
+    <text x="35" y="275" fill="#bedb88">linked: All tests passed.</text>
+  </g>
+  <text x="35" y="359" fill="#b9bdb5" font-family="Microsoft YaHei,sans-serif" font-size="15">依据实测输出排版 · 2026-11-15</text>
+</svg>

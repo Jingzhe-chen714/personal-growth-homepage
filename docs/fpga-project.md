@@ -34,6 +34,8 @@
 
 ## 可直接查看的资料
 
+- [联调现场照片](../assets/evidence/fpga-field-photo.jpg)：本人提供的真实设备与界面照片，包含开发板、连接线、显示器和电脑端；为网页加载缩小尺寸并转换为 JPEG。
+- [团队项目海报](../assets/evidence/fpga-poster.png)：展示项目功能，其中算法与动态效果为视觉示意，非实测截图。
 - [现象与处理示意图](../assets/evidence/fpga-field-notes.svg)：依据本人复盘制作的示意图，不是实物接线图或现场截图。
 - [网站项目页](../projects.html#fpga-public)：个人分工、技术范围、前后观察与后续计划。
 - [原始项目仓库](https://github.com/Jingzhe-chen714/fpga)：原工程仍由私有仓库维护，可能需要访问权限。本文及上述示意图公开可读。
