@@ -11,7 +11,7 @@
       if (link.dataset.page === page) link.setAttribute('aria-current','page');
       else link.removeAttribute('aria-current');
     }
-    document.title = ({home:'我的成长主页',journal:'学习手记',projects:'项目作品'})[page] + ' · 陈小雨';
+    document.title = ({home:'首页',journal:'学习记录',projects:'项目'})[page] + ' · 陈小雨';
   }
   if (single) {
     for (const link of document.querySelectorAll('[data-page]')) link.href = '#' + link.dataset.page;
